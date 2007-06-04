@@ -45,8 +45,8 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %prep
 %setup -q
-perl -pi -e 's/lib\/quodlibet/%{_lib}\/quodlibet/' Makefile
-perl -pi -e 's/usr\/local/usr/g' Makefile
+#perl -pi -e 's/lib\/quodlibet/%{_lib}\/quodlibet/' Makefile
+#perl -pi -e 's/usr\/local/usr/g' Makefile
 
 %build
 pushd mmkeys
@@ -73,6 +73,9 @@ cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
 ?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Quod Libet" longtitle="Advanced music player" section="Multimedia/Sound" xdg="true"
 ?package(%{name}): command="exfalso" icon="exfalso.png" needs="x11" title="Ex Falso" longtitle="Music tag editor" section="Multimedia/Sound" xdg="true"
 EOF
+
+rm -f %{buildroot}%{_datadir}/applications/*.desktop
+make exfalso.desktop quodlibet.desktop
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
