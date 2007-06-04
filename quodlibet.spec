@@ -49,12 +49,23 @@ perl -pi -e 's/lib\/quodlibet/%{_lib}\/quodlibet/' Makefile
 perl -pi -e 's/usr\/local/usr/g' Makefile
 
 %build
-%make
-%make extensions
+pushd mmkeys
+make mmkeyspy.c
+CFLAGS="%{optflags}" %{__python} setup.py build
+cp build/lib*/mmkeys.so ../_mmkeys.so
+popd
+
+#%make
+#%make extensions
 
 %install
 rm -rf $RPM_BUILD_ROOT
-DESTDIR=%buildroot make install
+#DESTDIR=%buildroot make install
+%ifarch x86_64 ppc64
+make install PREFIX=/usr TODEP=lib64/quodlibet DESTDIR=%{buildroot}
+%else
+make install PREFIX=/usr TODEP=lib/quodlibet DESTDIR=%{buildroot}
+%endif
 
 #menu
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
