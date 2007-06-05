@@ -1,6 +1,6 @@
 %define name	quodlibet
 %define version	1.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Advanced, elegant jukebox style music player
@@ -28,6 +28,12 @@ Requires:	pyvorbis
 Requires:	gstreamer0.10-python
 Requires:	python-feedparser
 Requires:	mutagen
+# for Replay Gain plugin
+Requires:       vorbisgain
+# for iPod device support
+Requires:       python-gpod
+# for CDDB plugin
+Requires:       python-CDDB
 
 %description
 Quod Libet is a GTK+-based audio player written in Python. It's designed
