@@ -45,8 +45,9 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %prep
 %setup -q
-#perl -pi -e 's/lib\/quodlibet/%{_lib}\/quodlibet/' Makefile
-#perl -pi -e 's/usr\/local/usr/g' Makefile
+perl -pi -e 's/lib\/quodlibet/%{_lib}\/quodlibet/' Makefile
+perl -pi -e 's/^-intltool-merge.*//' Makefile
+perl -pi -e 's/usr\/local/usr/g' Makefile
 
 %build
 pushd mmkeys
@@ -55,11 +56,12 @@ CFLAGS="%{optflags}" %{__python} setup.py build
 cp build/lib*/mmkeys.so ../_mmkeys.so
 popd
 
-#%make
-#%make extensions
+%make
+%make extensions
 
 %install
 rm -rf $RPM_BUILD_ROOT
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 #DESTDIR=%buildroot make install
 %ifarch x86_64 ppc64
 make install PREFIX=/usr TODEP=lib64/quodlibet DESTDIR=%{buildroot}
@@ -73,9 +75,6 @@ cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
 ?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Quod Libet" longtitle="Advanced music player" section="Multimedia/Sound" xdg="true"
 ?package(%{name}): command="exfalso" icon="exfalso.png" needs="x11" title="Ex Falso" longtitle="Music tag editor" section="Multimedia/Sound" xdg="true"
 EOF
-
-rm -f %{buildroot}%{_datadir}/applications/*.desktop
-make exfalso.desktop quodlibet.desktop
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
