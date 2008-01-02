@@ -11,6 +11,7 @@ Source:		http://www.sacredchao.net/~piman/software/%{name}-%{version}.tar.bz2
 URL:		http://www.sacredchao.net/quodlibet/
 License:	GPL
 Group:		Sound
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ImageMagick
 BuildRequires:	python
 BuildRequires:	pygtk2.0-devel
