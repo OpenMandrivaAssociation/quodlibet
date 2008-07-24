@@ -1,6 +1,6 @@
 %define name	quodlibet
 %define version	1.0
-%define release %mkrel 3
+%define release %mkrel 5
 
 Name: 	 	%{name}
 Summary: 	Advanced, elegant jukebox style music player
