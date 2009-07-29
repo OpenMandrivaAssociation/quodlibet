@@ -1,13 +1,11 @@
-Name:		quodlibet
 Summary: 	Advanced, elegant jukebox style music player
-Version:	2.0
-Release: 	%mkrel 2
+Name:		quodlibet
+Version:	2.1
+Release: 	%mkrel 1
 License:	GPLv2+
 Group:		Sound
 URL:		http://code.google.com/p/quodlibet/
 Source0:	http://quodlibet.googlecode.com/files/%{name}-%{version}.tar.gz
-Source1:	%{SOURCE0}.sig
-Patch0:		quodlibet-2.0-python26.patch
 BuildRequires:	imagemagick
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	pyvorbis
@@ -50,14 +48,9 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 export CFLAGS="%{optflags}"
-
-sed -i -e 's#self.prefix#"%{buildroot}%{_prefix}"#g' gdist/shortcuts.py
-sed -i -e 's#self.prefix#"%{buildroot}%{_prefix}"#g' gdist/man.py
-sed -i -e 's#self.install_base#"%{buildroot}%{_prefix}"#g' gdist/po.py
 
 python setup.py build
 
@@ -84,7 +77,7 @@ rm -rf %{buildroot}
 %post
 %update_menus
 %endif
-		
+
 %if %mdkversion < 200900
 %postun
 %clean_menus
@@ -97,7 +90,6 @@ rm -rf %{buildroot}
 %{_bindir}/exfalso
 %{py_sitedir}/%{name}
 %{py_sitedir}/%{name}*.egg-info
-
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
 %{_mandir}/man1/*
