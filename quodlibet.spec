@@ -1,6 +1,6 @@
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
-Version:	2.1
+Version:	2.1.98
 Release: 	%mkrel 1
 License:	GPLv2+
 Group:		Sound
