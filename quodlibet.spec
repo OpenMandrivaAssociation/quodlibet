@@ -1,11 +1,12 @@
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
-Version:	2.2.1
-Release: 	%mkrel 1
+Version:	2.3.1
+Release: 	1
 License:	GPLv2+
 Group:		Sound
 URL:		http://code.google.com/p/quodlibet/
 Source0:	http://quodlibet.googlecode.com/files/%{name}-%{version}.tar.gz
+Patch0:		quodlibet-2.3.1_link.patch
 BuildRequires:	imagemagick
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	pyvorbis
@@ -48,6 +49,7 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 export CFLAGS="%{optflags}"
