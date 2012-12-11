@@ -1,6 +1,8 @@
+%define	debug_package	%nil
+
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
-Version:	2.3.1
+Version:	2.4.1
 Release: 	1
 License:	GPLv2+
 Group:		Sound
@@ -9,14 +11,16 @@ Source0:	http://quodlibet.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		quodlibet-2.3.1_link.patch
 BuildRequires:	imagemagick
 BuildRequires:	pygtk2.0-devel
+BuildRequires:	gtk+2.0
 BuildRequires:	pyvorbis
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	gstreamer0.10-python
 BuildRequires:	mutagen
 BuildRequires:	python-dbus
-BuildRequires:	liboil-devel
+BuildRequires:	oil-devel
 BuildRequires:	python-feedparser
+BuildRequires:	pkgconfig(xtst)
 Requires:	pygtk2.0
 Requires:	python-ctypes
 Requires:	pyvorbis
@@ -31,7 +35,6 @@ Requires:       python-gpod
 Requires:       python-CDDB
 Requires:	python-dbus
 Requires:	python-feedparser
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Quod Libet is a GTK+-based audio player written in Python. It's designed
@@ -57,14 +60,12 @@ export CFLAGS="%{optflags}"
 python setup.py build
 
 %install
-rm -rf %{buildroot}
-
 python setup.py install --root=%{buildroot} --prefix=%{_prefix}
 
 # (tpg) install icons
-install -dm 755 %{buildroot}%{_datadir}/pixmaps
-install -m 644 build/lib/quodlibet/images/exfalso.png %{buildroot}%{_datadir}/pixmaps
-install -m 644 build/lib/quodlibet/images/%{name}.png %{buildroot}%{_datadir}/pixmaps
+#install -dm 755 %{buildroot}%{_datadir}/pixmaps
+#install -m 644 build/lib/quodlibet/images/exfalso.png %{buildroot}%{_datadir}/pixmaps
+#install -m 644 build/lib/quodlibet/images/%{name}.png %{buildroot}%{_datadir}/pixmaps
 
 # (tpg) get rid of extension
 sed -i -e 's/^Icon=%{name}.png$/Icon=%{name}/g' %{buildroot}%{_datadir}/applications/*
@@ -72,26 +73,12 @@ sed -i -e 's/^Icon=exfalso.png$/Icon=exfalso/g' %{buildroot}%{_datadir}/applicat
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc NEWS README HACKING
 %{_bindir}/%{name}
 %{_bindir}/exfalso
 %{py_sitedir}/%{name}
 %{py_sitedir}/%{name}*.egg-info
 %{_datadir}/applications/*
-%{_datadir}/pixmaps/*
+#% {_datadir}/pixmaps/*
 %{_mandir}/man1/*
