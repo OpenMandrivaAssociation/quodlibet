@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   quodlibet-2.4.1.tar.gz: 4db812f0b447805a27ae8f25517623205712b75e
+sources:
+  quodlibet-3.2.2.tar.gz: bad265479b39aefdbb2f52376808502ba8d11eec

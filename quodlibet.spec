@@ -2,39 +2,28 @@
 
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
-Version:	2.4.1
+Version:	3.2.2
 Release: 	1
 License:	GPLv2+
 Group:		Sound
 URL:		http://code.google.com/p/quodlibet/
 Source0:	http://quodlibet.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:		quodlibet-2.3.1_link.patch
 BuildRequires:	imagemagick
-BuildRequires:	pygtk2.0-devel
-BuildRequires:	gtk+2.0
-BuildRequires:	pyvorbis
+BuildRequires:	gtk+3.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-BuildRequires:	gstreamer0.10-python
 BuildRequires:	mutagen
-BuildRequires:	python-dbus
-BuildRequires:	oil-devel
-BuildRequires:	python-feedparser
+BuildRequires:	python2-dbus
 BuildRequires:	pkgconfig(xtst)
-Requires:	pygtk2.0
-Requires:	python-ctypes
-Requires:	pyvorbis
-Requires:	gstreamer0.10-python
-Requires:	python-feedparser
+Requires:	python2-gi-cairo
+Requires:	python2-feedparser
 Requires:	mutagen
 # for Replay Gain plugin
 Requires:       vorbisgain
-# for iPod device support
-Requires:       python-gpod
 # for CDDB plugin
 Requires:       python-CDDB
-Requires:	python-dbus
-Requires:	python-feedparser
+Requires:	python2-dbus
+Requires:	python2-feedparser
 
 %description
 Quod Libet is a GTK+-based audio player written in Python. It's designed
@@ -52,7 +41,7 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 export CFLAGS="%{optflags}"
@@ -74,11 +63,17 @@ sed -i -e 's/^Icon=exfalso.png$/Icon=exfalso/g' %{buildroot}%{_datadir}/applicat
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc NEWS README HACKING
+%doc NEWS README
 %{_bindir}/%{name}
 %{_bindir}/exfalso
-%{py_sitedir}/%{name}
-%{py_sitedir}/%{name}*.egg-info
+%{_bindir}/operon
+%{py2_puresitedir}/%{name}
+%{py2_puresitedir}/%{name}*.egg-info
+%{_datadir}/appdata/*
 %{_datadir}/applications/*
-#% {_datadir}/pixmaps/*
+%{_datadir}/pixmaps/*
+%{_datadir}/icons/hicolor/*/apps/*.png
+%{_datadir}/icons/hicolor/*/apps/*.svg
+%{_datadir}/dbus-1/services/net.sacredchao.QuodLibet.service
+%{_datadir}/gnome-shell/search-providers/quodlibet-search-provider.ini
 %{_mandir}/man1/*
