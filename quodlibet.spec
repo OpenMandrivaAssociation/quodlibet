@@ -49,12 +49,9 @@ support, gapless playback, multimedia keys, and an OSD.
 %package -n exfalso
 Summary:    Tag editor for musical files
 Group:      Sound/Utilities
-Requires:   python3
-Requires:   pythonegg(3)(mutagen)
+Requires:   python
+Requires:   mutagen
 Requires:   quodlibet >= %{version}
-# for musicbrainz plugin
-Requires:   pythonegg(3)(musicbrainzngs)
-Conflicts:  exfaslo < %{version}
 
 %description -n exfalso
 Ex Falso is a program that uses the same tag editing backend as Quod Libet,
