@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:		Sound
 URL:		https://quodlibet.readthedocs.io/
 Source0:	https://github.com/quodlibet/quodlibet/releases/download/release-%{version}/%{name}-%{version}.tar.gz
+BuildRequires:  gettext
 BuildRequires:	imagemagick
 BuildRequires:	gtk+3.0
 BuildRequires:	desktop-file-utils
@@ -19,6 +20,8 @@ Requires:	python-gi-cairo
 Requires:	python-feedparser
 Requires:	mutagen
 Requires: zsh
+Requires: exfalso 
+Recommends: quodlibet-plugins
 # for Replay Gain plugin
 Requires:       vorbisgain
 # for CDDB plugin
@@ -97,20 +100,28 @@ mkdir %{buildroot}%{_datadir}/zsh/site-functions/
 mv %{buildroot}%{_datadir}/zsh/vendor-completions/_quodlibet %{buildroot}%{_datadir}/zsh/site-functions/
 
 
-%find_lang %{name}
-
 %files -f %{name}.lang
 %doc NEWS README
 %{_bindir}/%{name}
-%{_bindir}/exfalso
 %{_bindir}/operon
-%{py2_puresitedir}/%{name}
-%{py2_puresitedir}/%{name}*.egg-info
-%{_datadir}/appdata/*
-%{_datadir}/applications/*
-%{_datadir}/pixmaps/*
-%{_datadir}/icons/hicolor/*/apps/*.png
-%{_datadir}/icons/hicolor/*/apps/*.svg
+%{python3_sitelib}/%{name}
+%{python3_sitelib}/%{name}*.egg-info
+%{_datadir}/applications/io.github.%{name}.QuodLibet.*
+%{_datadir}/appdata/io.github.%{name}.QuodLibet.appdata.xml
+%{_datadir}/gnome-shell/search-providers/io.github.%{name}.QuodLibet-search-provider.ini
 %{_datadir}/dbus-1/services/net.sacredchao.QuodLibet.service
-%{_datadir}/gnome-shell/search-providers/quodlibet-search-provider.ini
-%{_mandir}/man1/*
+%{_datadir}/zsh/site-functions/_quodlibet
+%{_datadir}/icons/hicolor/*/apps/io.github.%{name}.QuodLibet*.*
+%{_mandir}/man1/quodlibet.*
+%{_mandir}/man1/operon.*
+
+%files -n exfalso
+%{_bindir}/exfalso
+%{_datadir}/applications/exfalso.*
+%{_datadir}/appdata/exfalso.appdata.xml
+%{_mandir}/man1/exfalso.*
+%{_datadir}/icons/hicolor/*/apps/exfalso*.*
+
+%files gstbe
+
+%files xinebe
