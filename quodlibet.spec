@@ -74,7 +74,7 @@ This meta package installs neccessary packages to provide gstreamer backend supp
 Summary:    Xine backend for quodlibet
 Group:      Sound/Utilities
 Requires:   quodlibet >= %{version}
-Requires:   xine1.2-common
+Requires:   xine-lib
 Provides:   quodlibet-be = %{version}
 
 %description xinebe
