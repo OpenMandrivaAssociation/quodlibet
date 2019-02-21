@@ -16,6 +16,7 @@ BuildRequires:	intltool
 BuildRequires:	mutagen
 BuildRequires:	python-dbus
 BuildRequires:	pkgconfig(xtst)
+BuildRequires:  python3-devel
 Requires:	python-gi-cairo
 Requires:	python-feedparser
 Requires:	mutagen
