@@ -17,6 +17,7 @@ BuildRequires:	mutagen
 BuildRequires:	python-dbus
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:  python3-devel
+BuildRequires:  python3
 Requires:	python-gi-cairo
 Requires:	python-feedparser
 Requires:	mutagen
