@@ -86,10 +86,10 @@ This meta package installs neccessary packages to provide xine backend support.
 %autopatch -p1
 
 %build
-%py3_build
+%py_build
 
 %install
-%py3_install
+%py_install
 
 %find_lang %{name}
 
