@@ -87,6 +87,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %autopatch -p1
 
 %build
+export PYTHON=%{__python3}
 %py_build
 
 %install
