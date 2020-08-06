@@ -115,10 +115,10 @@ This meta package installs neccessary packages to provide xine backend support.
 
 %files -n exfalso
 %{_bindir}/exfalso
-%{_datadir}/applications/exfalso.*
-%{_datadir}/appdata/exfalso.appdata.xml
+#{_datadir}/applications/exfalso.*
+#{_datadir}/appdata/exfalso.appdata.xml
 %{_mandir}/man1/exfalso.*
-%{_datadir}/icons/hicolor/*/apps/exfalso*.*
+#{_datadir}/icons/hicolor/*/apps/exfalso*.*
 
 %files gstbe
 
