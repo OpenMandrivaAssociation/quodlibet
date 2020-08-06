@@ -94,8 +94,8 @@ This meta package installs neccessary packages to provide xine backend support.
 %find_lang %{name}
 
 # move zsh-completion files
-mkdir %{buildroot}%{_datadir}/zsh/site-functions/
-mv %{buildroot}%{_datadir}/zsh/vendor-completions/_quodlibet %{buildroot}%{_datadir}/zsh/site-functions/
+#mkdir %{buildroot}%{_datadir}/zsh/site-functions/
+#mv %{buildroot}%{_datadir}/zsh/vendor-completions/_quodlibet %{buildroot}%{_datadir}/zsh/site-functions/
 
 
 %files -f %{name}.lang
