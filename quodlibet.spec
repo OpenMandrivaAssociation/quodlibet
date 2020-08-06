@@ -9,7 +9,7 @@ Group:		Sound
 URL:		https://quodlibet.readthedocs.io/
 Source0:	https://github.com/quodlibet/quodlibet/releases/download/release-%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  gettext
-BuildRequires:	imagemagick
+#BuildRequires:	imagemagick
 BuildRequires:	gtk+3.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
