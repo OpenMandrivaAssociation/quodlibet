@@ -112,13 +112,15 @@ This meta package installs neccessary packages to provide xine backend support.
 %{_datadir}/icons/hicolor/*/apps/io.github.%{name}.QuodLibet*.*
 %{_mandir}/man1/quodlibet.*
 %{_mandir}/man1/operon.*
+%{_datadir}bash-completion/completions/operon
+%{_datadir}bash-completion/completions/quodlibet
 
 %files -n exfalso
 %{_bindir}/exfalso
-#{_datadir}/applications/exfalso.*
-#{_datadir}/appdata/exfalso.appdata.xml
+%{_datadir}/applications/io.github.quodlibet.ExFalso.desktop
+%{_datadir}/appdata/io.github.quodlibet.ExFalso.appdata.xml
 %{_mandir}/man1/exfalso.*
-#{_datadir}/icons/hicolor/*/apps/exfalso*.*
+%{_iconsdir}/hicolor/*/apps/io.github.quodlibet.ExFalso.*
 
 %files gstbe
 
