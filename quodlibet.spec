@@ -99,7 +99,7 @@ This meta package installs neccessary packages to provide xine backend support.
 
 
 %files -f %{name}.lang
-%doc NEWS README
+%doc NEWS.rst README.rst
 %{_bindir}/%{name}
 %{_bindir}/operon
 %{python3_sitelib}/%{name}
