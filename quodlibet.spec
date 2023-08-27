@@ -103,7 +103,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %{_bindir}/%{name}
 %{_bindir}/operon
 %{python3_sitelib}/%{name}
-#{python3_sitelib}/%{name}*.egg-info
+%{python3_sitelib}/quodlibet-%{version}.dist-info/
 %{_datadir}/applications/io.github.%{name}.QuodLibet.*
 %{_datadir}/appdata/io.github.%{name}.QuodLibet.appdata.xml
 %{_datadir}/gnome-shell/search-providers/io.github.%{name}.QuodLibet-search-provider.ini
