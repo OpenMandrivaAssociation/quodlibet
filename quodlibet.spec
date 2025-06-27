@@ -105,7 +105,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %{python3_sitelib}/%{name}
 %{python3_sitelib}/quodlibet-%{version}.dist-info/
 %{_datadir}/applications/io.github.%{name}.QuodLibet.*
-%{_datadir}/appdata/io.github.%{name}.QuodLibet.appdata.xml
+#{_datadir}/appdata/io.github.%{name}.QuodLibet.appdata.xml
 %{_datadir}/gnome-shell/search-providers/io.github.%{name}.QuodLibet-search-provider.ini
 %{_datadir}/dbus-1/services/net.sacredchao.QuodLibet.service
 %{_datadir}/zsh/site-functions/_quodlibet
