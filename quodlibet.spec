@@ -2,7 +2,7 @@
 
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
-Version:	4.6.0
+Version:	4.7.1
 Release: 	1
 License:	GPLv2+
 Group:		Sound
