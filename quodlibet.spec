@@ -105,7 +105,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %{python3_sitelib}/%{name}
 %{python3_sitelib}/quodlibet-%{version}.dist-info/
 %{_datadir}/applications/io.github.%{name}.QuodLibet.*
-#{_datadir}/appdata/io.github.%{name}.QuodLibet.appdata.xml
+%{_datadir}/metainfo/io.github.quodlibet.QuodLibet.appdata.xml
 %{_datadir}/gnome-shell/search-providers/io.github.%{name}.QuodLibet-search-provider.ini
 %{_datadir}/dbus-1/services/net.sacredchao.QuodLibet.service
 %{_datadir}/zsh/site-functions/_quodlibet
@@ -118,7 +118,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %files -n exfalso
 %{_bindir}/exfalso
 %{_datadir}/applications/io.github.quodlibet.ExFalso.desktop
-#{_datadir}/appdata/io.github.quodlibet.ExFalso.appdata.xml
+%{_datadir}/metainfo/io.github.quodlibet.ExFalso.appdata.xml
 %{_mandir}/man1/exfalso.*
 %{_iconsdir}/hicolor/*/apps/io.github.quodlibet.ExFalso.*
 %{_iconsdir}/hicolor/scalable/apps/io.github.quodlibet.ExFalso-symbolic.svg
