@@ -118,7 +118,7 @@ This meta package installs neccessary packages to provide xine backend support.
 %files -n exfalso
 %{_bindir}/exfalso
 %{_datadir}/applications/io.github.quodlibet.ExFalso.desktop
-%{_datadir}/appdata/io.github.quodlibet.ExFalso.appdata.xml
+#{_datadir}/appdata/io.github.quodlibet.ExFalso.appdata.xml
 %{_mandir}/man1/exfalso.*
 %{_iconsdir}/hicolor/*/apps/io.github.quodlibet.ExFalso.*
 %{_iconsdir}/hicolor/scalable/apps/io.github.quodlibet.ExFalso-symbolic.svg
