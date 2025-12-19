@@ -3,7 +3,7 @@
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
 Version:	4.7.1
-Release: 	1
+Release: 	2
 License:	GPLv2+
 Group:		Sound
 URL:		https://quodlibet.readthedocs.io/
