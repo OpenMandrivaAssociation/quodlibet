@@ -18,6 +18,7 @@ BuildRequires:	python%{pyver}dist(dbus-python)
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:  python3-devel
 BuildRequires:  python%{pyver}dist(pip)
+BuildRequires:  python%{pyver}dist(setuptools)
 Requires:	python-gi-cairo
 Requires:	python-feedparser
 Requires:	mutagen
