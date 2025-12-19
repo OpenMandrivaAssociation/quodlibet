@@ -14,9 +14,10 @@ BuildRequires:	gtk+3.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	mutagen
-BuildRequires:	python3-dbus
+BuildRequires:	python%{pyver}dist(dbus)
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:  python3-devel
+BuildRequires:  python%{pyver}dist(pip)
 Requires:	python-gi-cairo
 Requires:	python-feedparser
 Requires:	mutagen
