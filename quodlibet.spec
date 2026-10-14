@@ -3,7 +3,7 @@
 Summary: 	Advanced, elegant jukebox style music player
 Name:		quodlibet
 Version:	4.7.1
-Release: 	2
+Release: 	3
 License:	GPLv2+
 Group:		Sound
 URL:		https://quodlibet.readthedocs.io/
@@ -16,7 +16,7 @@ BuildRequires:	intltool
 BuildRequires:	mutagen
 BuildRequires:	python%{pyver}dist(dbus-python)
 BuildRequires:	pkgconfig(xtst)
-BuildRequires:  python3-devel
+BuildRequires:  pkgconfig(python3)
 BuildRequires:  python%{pyver}dist(pip)
 BuildRequires:  python%{pyver}dist(setuptools)
 Requires:	python-gi-cairo
